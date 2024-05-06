@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "EverythingEverywhereAllAtOnce",
+    "slug": "EverythingEverywhereAllAtOnce",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.with-new-arch"
+    },
+    "android": {
+      "package": "com.example.withnewarch"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dc4f18e3-8591-41f0-9749-d61b32d016a5"
+      }
+    }
+  }
+}
