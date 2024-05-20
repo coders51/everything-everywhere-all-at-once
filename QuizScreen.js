@@ -4,17 +4,14 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useState } from "react";
 import { supabase } from "./lib/supabase";
 import { TouchableOpacity } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import uuid from "react-native-uuid";
 import { lowerCase } from "lodash";
 
 const uuidV4 = uuid.v4();
 
 const QuizScreen = ({ route }) => {
-  const insets = useSafeAreaInsets();
   const [numberOfUsers, setNumberOfUsers] = useState(null);
   const { name } = route.params;
-  const hasDynamicIsland = insets.top == 59;
   const userName = `${lowerCase(name)}-${uuidV4}`;
   const userStatus = {
     user: userName,
@@ -65,10 +62,10 @@ const QuizScreen = ({ route }) => {
       >
         <View
           style={{
-            marginBottom: 20,
+            paddingBottom: 50,
             alignItems: "center",
             gap: 4,
-            ...(hasDynamicIsland ? { top: 140 } : {}),
+            marginTop: -50,
           }}
         >
           <Text
@@ -124,11 +121,10 @@ const QuizScreen = ({ route }) => {
 const styles = StyleSheet.create({
   title: {
     fontSize: 30,
-    color: "white",
+    color: "#fff",
   },
   buttonsContainer: {
     width: "100%",
-    height: "100%",
     flexDirection: "column",
     justifyContent: "center",
     gap: 10,
